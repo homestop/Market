@@ -1,0 +1,11 @@
+.card {
+    max-width: 190px;
+    max-height: 318px;
+    height: 318px;
+    width: 190px;
+}
+
+.card-flex {
+    display: flex;
+    flex-wrap: wrap;
+}

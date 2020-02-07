@@ -1,2 +1,21 @@
-<div>
+<div class="container card-flex">
+    <div *ngFor="let product of products" style="margin: 10px;"> 
+        <mat-card class="card">
+            <mat-card-header>
+                <mat-card-title>{{product.name}}</mat-card-title>
+                <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
+            </mat-card-header>
+            <img  mat-card-image src="">
+            <mat-card-content>
+                <p>{{product.price}}</p>
+                <p>{{product.description}}</p>
+            </mat-card-content>
+            <mat-card-actions *ngIf="product.in_stock">
+                <button mat-button>Buy</button>
+            </mat-card-actions>
+            <mat-card-actions *ngIf="!product.in_stock">
+                <p>Sold out</p>
+            </mat-card-actions>
+        </mat-card>
+    </div>
 </div>
