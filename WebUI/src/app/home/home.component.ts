@@ -13,6 +13,12 @@ export class HomeComponent implements OnInit {
 
   products = new Array<Product>();
 
+  onBuyClick(product: Product) {
+      console.log(product);
+  }
+
+
+
   ngOnInit() {
     this.productService.get().subscribe((x: Array<Product>) => {
       this.products = x;

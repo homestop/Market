@@ -11,7 +11,7 @@
                 <p>{{product.description}}</p>
             </mat-card-content>
             <mat-card-actions *ngIf="product.in_stock">
-                <button mat-button>Buy</button>
+                <button mat-button (click)="onBuyClick(product)">Buy</button>
             </mat-card-actions>
             <mat-card-actions *ngIf="!product.in_stock">
                 <p style="color: red;">Sold out</p>
