@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
+import { CheckoutService } from '../services/checkout.service';
 import { Product } from '../models/product.model';
+import { CheckoutComponent } from '../checkout/checkout.component';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-home',
@@ -14,10 +17,8 @@ export class HomeComponent implements OnInit {
   products = new Array<Product>();
 
   onBuyClick(product: Product) {
-      console.log(product);
+    //TODO: create context window, which will be ask for continue or checkout
   }
-
-
 
   ngOnInit() {
     this.productService.get().subscribe((x: Array<Product>) => {

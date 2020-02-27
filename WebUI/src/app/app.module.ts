@@ -7,16 +7,21 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './services/product.service';
+import { CheckoutService } from './services/checkout.service';
 import { HeaderComponent } from './header/header.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    CheckoutComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,8 @@ import { MatCardModule } from '@angular/material/card';
     MatCardModule
   ],
   providers: [
-    ProductService
+    ProductService,
+    CheckoutService
   ],
   bootstrap: [AppComponent]
 })

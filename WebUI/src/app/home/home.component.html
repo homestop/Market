@@ -1,5 +1,5 @@
 <div class="container card-flex">
-    <div *ngFor="let product of products" style="margin: 10px;"> 
+    <div *ngFor="let product of products" style="margin: 10px;">
         <mat-card class="card">
             <mat-card-header>
                 <mat-card-title>{{product.name}}</mat-card-title>
@@ -11,7 +11,10 @@
                 <p>{{product.description}}</p>
             </mat-card-content>
             <mat-card-actions *ngIf="product.in_stock">
-                <button mat-button (click)="onBuyClick(product)">Buy</button>
+                <button mat-button (click)="onBuyClick(product)"
+                        [routerLink]="['/product', product.id]">
+                  Buy
+                </button>
             </mat-card-actions>
             <mat-card-actions *ngIf="!product.in_stock">
                 <p style="color: red;">Sold out</p>
