@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../models/product.model';
 import { ProductService } from '../services/product.service';
+import { CheckoutComponent } from '../checkout/checkout.component';
+import { CheckoutService } from '../services/checkout.service';
 
 @Component({
   selector: 'app-product',
@@ -11,15 +13,12 @@ import { ProductService } from '../services/product.service';
 export class ProductComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private checkoutService: CheckoutService
   ) { }
 
   id: number;
   product = new Product();
-
-  print() {
-    console.log(this.product)
-  }
 
   ngOnInit() {
     this.route.params.subscribe(x => {
@@ -28,7 +27,8 @@ export class ProductComponent implements OnInit {
 
     this.productService.getById(this.id).subscribe((x: Product) => {
       this.product = x;
-      this.print();
+
+      this.checkoutService.cartAdd(this.product);
     });
   }
 

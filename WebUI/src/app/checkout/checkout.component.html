@@ -1,3 +1,63 @@
-<div class="container">
-  <p> Hello world</p>
+<div class="container checkout-flex">
+  <div>
+    <form>
+      <mat-form-field>
+        <mat-label>First and last name</mat-label>
+        <input matInput id="firstLastNameId"/>
+        <mat-hint></mat-hint>
+      </mat-form-field>
+    </form>
+    <form class="email-form" (submit)="onClickSend">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput id="emailInputId" (formControl)="emailForm"
+               errorStateMatcher="matcher" placeholder="example@example.com"/>
+      </mat-form-field>
+    </form>
+    <form>
+      <mat-form-field>
+        <mat-label>Phone</mat-label>
+        <input matInput id="phoneId"/>
+        <mat-hint></mat-hint>
+      </mat-form-field>
+    </form>
+    <form>
+      <mat-form-field>
+        <mat-label>Shipping address</mat-label>
+        <input matInput id="shippingAddressId"/>
+        <mat-hint></mat-hint>
+      </mat-form-field>
+    </form>
+    <button (click)="onClickSend()">Send</button>
+  </div>
+  <div class="checkout-card">
+    <mat-card class="checkout-card-style">
+      <mat-card-title
+        style="border-bottom: 1px solid black;">
+        Test</mat-card-title>
+      <mat-card-content>
+        <div
+          *ngFor="let product of cartItems"
+          style="margin-top: 10px;">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ product.name }}
+              </mat-panel-title>
+              <mat-panel-description style="align-items: flex-end;">
+                Price: {{ product.price }} $
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>
+              Category: {{ product.category }}
+            </p>
+            <p>
+              Description: {{ product.description }}
+            </p>
+          </mat-expansion-panel>
+        </div>
+      </mat-card-content>
+      <h4 style="border-top: 1px solid black;"> Total price: </h4>
+    </mat-card>
+  </div>
 </div>

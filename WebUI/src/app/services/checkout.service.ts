@@ -17,6 +17,6 @@ export class CheckoutService {
   }
 
   cartGet() {
-    console.log(this.productList);
+    return this.productList;
   }
 }

@@ -1,0 +1,29 @@
+.email-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.checkout-flex {
+  display: flex;
+
+}
+
+.checkout-info {
+  flex-direction: column;
+}
+
+.checkout-card {
+  flex-direction: row;
+  align-items: flex-end;
+  margin-left: 31%;
+}
+
+.checkout-card-style {
+  flex: 1 1 auto;
+  height: 650px;
+  width: 550px;
+
+  overflow: auto;
+  box-sizing: border-box;
+}
