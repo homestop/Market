@@ -12,10 +12,10 @@ export class ProductService {
   }
 
   get(): Observable<Array<Product>> {
-    return this.http.get<Array<Product>>(`${environment.api}/product/?format=json`);
+    return this.http.get<Array<Product>>(`${environment.api}api/product/?format=json`);
   }
 
   getById(id: number): Observable<Product> {
-    return this.http.get<Product>(`${environment.api}/product/${id}/?format=json`);
+    return this.http.get<Product>(`${environment.api}api/product/${id}/?format=json`);
   }
 }
