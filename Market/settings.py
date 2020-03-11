@@ -19,7 +19,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
-    
+
     'Market.apps.product',
     'Market.apps.order',
 ]
