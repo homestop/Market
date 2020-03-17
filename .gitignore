@@ -1,5 +1,6 @@
 .vscode
 db.*
+assets
 venv
 env
 __pycache__

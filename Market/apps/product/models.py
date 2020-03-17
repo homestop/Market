@@ -1,4 +1,17 @@
 from django.db import models
+from os import path
+
+
+def get_image_path(instancd, filename):
+    return path.join('assets', filename)
+
+
+class ProductImage(models.Model):
+    product_image_id = models.CharField(max_length=25, primary_key=True)
+    product_image = models.ImageField(upload_to=get_image_path, blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.product_image_id}'
 
 
 class Product(models.Model):
@@ -7,6 +20,11 @@ class Product(models.Model):
     category = models.CharField(max_length=50)
     description = models.CharField(max_length=600)
     in_stock = models.BooleanField()
+    # TODO: create flexible image system
+    '''
+        if more then 10 images is not manageable
+    '''
+    images = models.ManyToManyField(ProductImage)
 
     def __str__(self):
         return f'{self.name}'
