@@ -15,12 +15,12 @@ class ProductImageList(models.Model):
 
 
 class ProductImage(models.Model):
-    product_image_id = models.CharField(max_length=25, primary_key=True)
-    product_image = models.ImageField(upload_to=get_image_path, blank=True, null=True)
+    name = models.CharField(max_length=25, primary_key=True)
+    header = models.ImageField(upload_to=get_image_path, blank=True, null=True)
     list = models.ManyToManyField(ProductImageList, blank=True, null=True)
 
     def __str__(self):
-        return f'{self.product_image_id}'
+        return f'{self.name}'
 
 
 class Product(models.Model):
