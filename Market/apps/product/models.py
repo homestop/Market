@@ -2,7 +2,7 @@ from django.db import models
 from os import path
 
 
-def get_image_path(instancd, filename):
+def get_image_path(instance, filename):
     return path.join('assets', filename)
 
 
@@ -17,7 +17,7 @@ class ProductImageList(models.Model):
 class ProductImage(models.Model):
     name = models.CharField(max_length=25, primary_key=True)
     header = models.ImageField(upload_to=get_image_path, blank=True, null=True)
-    list = models.ManyToManyField(ProductImageList, blank=True, null=True)
+    list = models.ManyToManyField(ProductImageList)
 
     def __str__(self):
         return f'{self.name}'
