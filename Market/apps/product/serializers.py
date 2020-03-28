@@ -12,7 +12,7 @@ class ProductImageListSerializers(serializers.ModelSerializer):
 
 
 class ProductImageSerializers(serializers.ModelSerializer):
-    list = ProductImageListSerializers()
+    list = ProductImageListSerializers(many=True)
 
     class Meta:
         model = ProductImage
