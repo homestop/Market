@@ -1,3 +1,5 @@
+import { Image } from './image.model';
+
 export class Product {
   id: number;
   name: string;
@@ -5,4 +7,5 @@ export class Product {
   category: string;
   description: string;
   in_stock: boolean;
+  images: Image;
 }

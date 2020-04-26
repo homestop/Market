@@ -17,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductComponent } from './product/product.component';
+import { ImageService } from './services/image.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ProductComponent } from './product/product.component';
   ],
   providers: [
     ProductService,
-    CheckoutService
+    CheckoutService,
+    ImageService
   ],
   bootstrap: [AppComponent]
 })

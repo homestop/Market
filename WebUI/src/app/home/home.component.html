@@ -7,8 +7,17 @@
             </mat-card-header>
             <img  mat-card-image src="">
             <mat-card-content>
-                <p>{{product.price}}</p>
-                <p>{{product.description}}</p>
+                <div>
+                    <div *ngIf="imageIsNull(product.images)">
+                        <ng-template #image>
+                            <img [src]="product.images.header">
+                        </ng-template>
+                        <ng-container *ngTemplateOutlet="image"></ng-container>
+                    </div>
+
+                    <p>{{product.price}}</p>
+                    <p>{{product.description}}</p>
+                </div>
             </mat-card-content>
             <mat-card-actions *ngIf="product.in_stock">
                 <button mat-button (click)="onBuyClick(product)"

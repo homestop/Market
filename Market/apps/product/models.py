@@ -29,6 +29,7 @@ class Product(models.Model):
     category = models.CharField(max_length=50)
     description = models.CharField(max_length=600)
     in_stock = models.BooleanField()
+
     # TODO: create flexible image system
     '''
         if more then 10 images is not manageable
