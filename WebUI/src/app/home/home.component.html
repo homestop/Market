@@ -1,22 +1,25 @@
 <div class="container card-flex">
     <div *ngFor="let product of products" style="margin: 10px;">
+        <!-- TODO: Create card component -->
         <mat-card class="card">
-            <mat-card-header>
-                <mat-card-title>{{product.name}}</mat-card-title>
-                <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
-            </mat-card-header>
             <img  mat-card-image src="">
             <mat-card-content>
                 <div>
-                    <div *ngIf="imageIsNull(product.images)">
+                    <div *ngIf="imageIsNull(product.images); else notFound">
                         <ng-template #image>
-                            <img [src]="product.images.header">
+                            <img style="margin-left: 15px;" width="128" height="128" 
+                                [src]="product.images.header">     
                         </ng-template>
                         <ng-container *ngTemplateOutlet="image"></ng-container>
                     </div>
-
-                    <p>{{product.price}}</p>
-                    <p>{{product.description}}</p>
+                    <ng-template #notFound>
+                        <img style="margin-left: 15px;" width="128" height="128" 
+                            src="../../assets/not-found.png">
+                    </ng-template>
+                    <div style="margin: 15px;">
+                        <h5>{{product.name}}</h5>
+                        <h5>{{product.price}}</h5>
+                    </div>
                 </div>
             </mat-card-content>
             <mat-card-actions *ngIf="product.in_stock">

@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
-import { CheckoutService } from '../services/checkout.service';
 import { Product } from '../models/product.model';
-import { CheckoutComponent } from '../checkout/checkout.component';
-import { EventEmitter } from 'events';
 import { isNull } from 'util';
 import { ImageService } from '../services/image.service';
-import { Image } from '../models/image.model';
 
 @Component({
   selector: 'app-home',
@@ -19,6 +15,7 @@ export class HomeComponent implements OnInit {
     private imageService: ImageService) {
     }
 
+  // TODO: Move it to service
   products = new Array<Product>();
 
   imageIsNull(image) {
