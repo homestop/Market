@@ -7,7 +7,7 @@
                 <div>
                     <div *ngIf="imageIsNull(product.images); else notFound">
                         <ng-template #image>
-                            <img style="margin-left: 15px;" width="128" height="128" 
+                            <img width="168" height="128" 
                                 [src]="product.images.header">     
                         </ng-template>
                         <ng-container *ngTemplateOutlet="image"></ng-container>
@@ -24,7 +24,7 @@
             </mat-card-content>
             <mat-card-actions *ngIf="product.in_stock">
                 <button mat-button (click)="onBuyClick(product)"
-                        [routerLink]="['/product', product.id]">
+                        style="margin-left: 20px" [routerLink]="['/product', product.id]">
                   Buy
                 </button>
             </mat-card-actions>
