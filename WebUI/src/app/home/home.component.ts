@@ -13,17 +13,12 @@ export class HomeComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private imageService: ImageService) {
-    }
+  }
 
-  // TODO: Move it to service
-  products = new Array<Product>();
+  products;
 
   imageIsNull(image) {
     return !isNull(image);
-  }
-
-  getImage(url: string) {
-    this.imageService.getImage(url).subscribe();
   }
 
   onBuyClick(product: Product) {
@@ -32,13 +27,15 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.productService.get().subscribe((x: Array<Product>) => {
-      this.products = x;
-      this.products.forEach((i: Product) => {
+      this.productService.products = x;
+      this.productService.products.forEach((i: Product) => {
         if (this.imageIsNull(i.images)) {
           this.imageService.getImage(i.images.header).subscribe();
         }
       });
-      console.log(this.products);
+
+      this.products = this.productService.products;
+      console.log(this.productService.products);
     });
   }
 }

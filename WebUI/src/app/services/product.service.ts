@@ -11,6 +11,8 @@ export class ProductService {
   constructor(private http: HttpClient) {
   }
 
+  products = new Array<Product>();
+
   get(): Observable<Array<Product>> {
     return this.http.get<Array<Product>>(`${environment.api}api/product/?format=json`);
   }
