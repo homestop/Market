@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { ProductComponent } from './product/product.component';
+import { DetailComponent } from './detail/detail.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'checkout', component: CheckoutComponent },
-  { path: 'product/:id', component: ProductComponent }
+  { path: 'detail/:id', component: DetailComponent}
 ];
 
 @NgModule({
