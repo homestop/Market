@@ -1,8 +1,12 @@
-<div class="container">
-    <div>
-        <!-- TODO: reference form for view image in source -->
-        <img id="header" [src]="product.images.header"> 
-        <p>{{product.name}}</p>
-        <button (click)="addToCart()"> Buy </button>
+<div class="container" id="main-detail-flex">
+    <div id="content-detail-flex">
+      <!-- TODO: reference form for view image in source -->
+      <img id="header" [src]="product.images.header">
+      <p style="margin-top: 10px;">{{product.name}}</p>
+      <p>{{product.description}}</p>
+    </div>
+    <div id="action-detail-flex">
+      <p style="margin-left: 15px;">{{product.price}} $</p>
+      <button (click)="addToCart()"> Buy </button>
     </div>
 </div>

@@ -16,7 +16,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { ProductComponent } from './product/product.component';
 import { ImageService } from './services/image.service';
 import { DetailComponent } from './detail/detail.component';
 

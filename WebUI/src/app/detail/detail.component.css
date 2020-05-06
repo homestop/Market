@@ -6,3 +6,17 @@
 button {
     margin-left: 10px;
 }
+
+#main-detail-flex {
+  display: flex;
+}
+
+#content-detail-flex {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#action-detail-flex {
+  flex-direction: row;
+  align-items: flex-end;
+}
