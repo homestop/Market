@@ -37,13 +37,14 @@ export class DetailComponent implements OnInit {
         console.log(this.product);
       });
     } else {
-      this.productService.products.every((x: Product) => {
+      this.productService.products.forEach((x: Product) => {
         // tslint:disable-next-line: triple-equals
         if (x.id == this.id) {
           this.product = x;
           return true;
         }
         console.log(this.product);
+        return false;
       });
     }
   }

@@ -6,15 +6,23 @@ CLEAR = 'clear'
 
 NAMES = [
     'Video card',
+    'Monitor',
+    'Memory',
 ]
 PRICES = [
     '150',
+    '250',
+    '40',
 ]
 CATEGORIES = [
-    'GPU'
+    'GPU',
+    'Monitors',
+    'RAM',
 ]
 DESCRIPTIONS = [
-    'Best choice for low price'
+    'Best choice for low price',
+    'Best quality on the market',
+    'Faster then memory X'
 ]
 
 class Command(BaseCommand):
@@ -29,7 +37,9 @@ class Command(BaseCommand):
 def create_image(i):
     name = NAMES
     header = [
-        'Videocard.jpg'
+        'Videocard.jpg',
+        'Monitor.jpg',
+        'Memory.jpg',
     ]
 
     image = ProductImage(
@@ -66,5 +76,5 @@ def clear_data():
 def run_seed():
     clear_data()
 
-    for i in range(1):
+    for i in range(len(NAMES)):
         create_product(i)
