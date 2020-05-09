@@ -40,3 +40,7 @@ cd WebUI
 npm install
 ng serve
 ```
+
+####Screenshot
+![](./assets/screenshots/%202020-05-09.png)
+![](./assets/screenshots/2020-05-09%201.png)
