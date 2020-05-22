@@ -13,7 +13,18 @@ export class CheckoutService {
     this.productList.push(product);
   }
 
-  cartRemove(product: Product) {
+  cartRemoveByIndex(product: Product) {
+    // TODO: review it again, it's work
+    for(var i = this.productList.length - 1; i >= 0; i--) {
+      if(this.productList[i].id == product.id) {
+        this.productList.splice(i, 1)
+      }
+    }
+  }
+
+  cartRemoveAll() {
+    let index = 0;
+    this.productList.forEach(() => this.productList.splice(index++));
   }
 
   cartGet() {

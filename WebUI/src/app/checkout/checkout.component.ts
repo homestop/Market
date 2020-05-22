@@ -27,7 +27,7 @@ export class CheckoutComponent implements OnInit {
 
   cartItems: Array<Product>;
 
-  onClickSend() {
+  onSendClick() {
     //TODO: if input is null
     let firstLastName = document.getElementById('firstLastNameId') as HTMLInputElement;
     let email = document.getElementById('emailInputId') as HTMLInputElement;
@@ -45,6 +45,14 @@ export class CheckoutComponent implements OnInit {
 
     this.orderService.post(order).subscribe();
     console.log(JSON.stringify(order));
+  }
+
+  onRemoveByIndex(product: Product) {
+    this.checkoutService.cartRemoveByIndex(product);
+  }
+
+  onRemoveAllClick() {
+    this.checkoutService.cartRemoveAll();
   }
 
   ngOnInit() {

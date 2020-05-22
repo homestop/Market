@@ -28,7 +28,7 @@
         <mat-hint></mat-hint>
       </mat-form-field>
     </form>
-    <button (click)="onClickSend()">Send</button>
+    <button (click)="onSendClick()">Send</button>
   </div>
   <div class="checkout-card">
     <mat-card class="checkout-card-style">
@@ -54,10 +54,14 @@
             <p>
               Description: {{ product.description }}
             </p>
+            <mat-action-row>
+              <button (click)="onRemoveByIndex(product)">Remove it</button>
+            </mat-action-row>
           </mat-expansion-panel>
         </div>
       </mat-card-content>
       <h4 style="border-top: 1px solid  #c9c9c9;"> Total price: </h4>
+      <button (click)="onRemoveAllClick()">Remove all</button>
     </mat-card>
   </div>
 </div>

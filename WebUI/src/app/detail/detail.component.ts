@@ -23,6 +23,7 @@ export class DetailComponent implements OnInit {
 
   addToCart() {
     console.log('add to cart func');
+    this.checkoutService.cartAdd(this.product);
   }
 
   ngOnInit() {
