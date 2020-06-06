@@ -7,10 +7,10 @@
         <mat-hint></mat-hint>
       </mat-form-field>
     </form>
-    <form class="email-form" (submit)="onClickSend">
+    <form class="email-form" (submit)="onSendClick">
       <mat-form-field>
         <mat-label>Email</mat-label>
-        <input matInput id="emailInputId" (formControl)="emailForm"
+        <input matInput id="emailInputId" 
                errorStateMatcher="matcher" placeholder="example@example.com"/>
       </mat-form-field>
     </form>

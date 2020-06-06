@@ -5,6 +5,7 @@ import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/fo
 import { ErrorStateMatcher } from '@angular/material/core';
 import { OrderService } from '../services/order.service';
 import { Order } from '../models/order.model';
+import { SendHelper } from './ helpers';
 
 
 @Component({
@@ -19,30 +20,12 @@ export class CheckoutComponent implements OnInit {
   ) {
   }
 
-  //TODO: Dosen't work validators
-  emailForm = new FormControl('',[
-    Validators.required,
-    Validators.email
-  ]);
-
   cartItems: Array<Product>;
 
   onSendClick() {
-    //TODO: if input is null
-    let firstLastName = document.getElementById('firstLastNameId') as HTMLInputElement;
-    let email = document.getElementById('emailInputId') as HTMLInputElement;
-    let phone = document.getElementById('phoneId') as HTMLInputElement;
-    let shippingAddress = document.getElementById('shippingAddressId') as HTMLInputElement;
-    let productsId = this.cartItems.map(x => x.id);
+    const order = new Order();
 
-    let order = new Order(
-      productsId,
-      firstLastName.value,
-      email.value,
-      phone.value,
-      shippingAddress.value
-    );
-
+    SendHelper.processOrder(order, this.cartItems);
     this.orderService.post(order).subscribe();
     console.log(JSON.stringify(order));
   }
