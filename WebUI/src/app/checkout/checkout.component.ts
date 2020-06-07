@@ -6,6 +6,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { OrderService } from '../services/order.service';
 import { Order } from '../models/order.model';
 import { SendHelper } from './ helpers';
+import { ProductService } from '../services/product.service';
 
 
 @Component({
@@ -16,7 +17,8 @@ import { SendHelper } from './ helpers';
 export class CheckoutComponent implements OnInit {
   constructor(
     private checkoutService: CheckoutService,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private prodService: ProductService
   ) {
   }
 
@@ -39,6 +41,11 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit() {
+    // TODO : Remove it
+    this.prodService.getById(17).subscribe((x: Product) => {
+      this.checkoutService.productList.push(x);
+    });
+
     this.cartItems = this.checkoutService.cartGet();
     console.log(this.cartItems);
   }

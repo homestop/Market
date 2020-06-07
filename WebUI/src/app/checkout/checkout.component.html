@@ -7,7 +7,7 @@
         <mat-hint></mat-hint>
       </mat-form-field>
     </form>
-    <form class="email-form" (submit)="onSendClick">
+    <form class="email-form" (submit)="onSendClick()">
       <mat-form-field>
         <mat-label>Email</mat-label>
         <input matInput id="emailInputId" 
@@ -30,6 +30,7 @@
     </form>
     <button (click)="onSendClick()">Send</button>
   </div>
+
   <div class="checkout-card">
     <mat-card class="checkout-card-style">
       <mat-card-title

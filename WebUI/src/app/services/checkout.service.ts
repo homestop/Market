@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product.model';
-
 @Injectable({
   providedIn: 'root'
 })
 export class CheckoutService {
-  constructor() {}
+  constructor() {
+  }
 
   productList = new Array<Product>();
 
@@ -15,9 +15,9 @@ export class CheckoutService {
 
   cartRemoveByIndex(product: Product) {
     // TODO: review it again, it's work
-    for(var i = this.productList.length - 1; i >= 0; i--) {
-      if(this.productList[i].id == product.id) {
-        this.productList.splice(i, 1)
+    for (let i = this.productList.length - 1; i >= 0; i--) {
+      if (this.productList[i].id == product.id) {
+        this.productList.splice(i, 1);
       }
     }
   }
