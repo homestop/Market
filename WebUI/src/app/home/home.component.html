@@ -1,8 +1,8 @@
 <div class="container card-flex">
-    <div *ngFor="let product of products" style="margin: 10px;">
+    <div *ngFor="let product of products" 
+        class="card-border" style="margin: 10px;">
         <!-- TODO: Create card component -->
         <mat-card class="card">
-            <img  mat-card-image src="">
             <mat-card-content>
                 <div>
                     <div *ngIf="imageIsNull(product.images); else notFound">
