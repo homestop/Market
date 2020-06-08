@@ -39,8 +39,9 @@
       <mat-card-content>
         <div
           *ngFor="let product of cartItems"
-          style="margin-top: 10px;">
-          <mat-expansion-panel>
+          style="margin-top: 10px;"
+          class="expansion-panel">
+          <mat-expansion-panel class="expansion-panel">
             <mat-expansion-panel-header>
               <mat-panel-title>
                 {{ product.name }}
@@ -61,8 +62,15 @@
           </mat-expansion-panel>
         </div>
       </mat-card-content>
-      <h4 style="border-top: 1px solid  #c9c9c9;"> Total price: </h4>
-      <button (click)="onRemoveAllClick()">Remove all</button>
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; flex-direction: row;">
+          <h4> Total price: </h4>
+          <h4 style="margin-left: 10px;"> 100 $ </h4>
+        </div>
+        <div style="display: flex; flex-direction: row; justify-content: right;">
+          <button (click)="onRemoveAllClick()">Remove all</button>
+        </div>
+      </div>
     </mat-card>
   </div>
 </div>
