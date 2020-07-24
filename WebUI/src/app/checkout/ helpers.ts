@@ -1,5 +1,6 @@
-import { Order } from '../models/order.model';
-import { Product } from '../models/product.model';
+import { Order } from '../core/models/order.model';
+import { Product } from '../core/models/product.model';
+
 
 export class SendHelper {
     public static processOrder(order: Order, cartItem: Array<Product>): Order {

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../models/product.model';
-import { ProductService } from '../services/product.service';
 import { ActivatedRoute } from '@angular/router';
-import { CheckoutService } from '../services/checkout.service';
-import { ImageService } from '../services/image.service';
+
+import { Product } from '../core/models/product.model';
+import { ImageService } from '../core/services/image.service';
+import { ProductService } from '../core/services/product.service';
+import { CheckoutService } from '../core/services/checkout.service';
+
 
 @Component({
   selector: 'app-detail',

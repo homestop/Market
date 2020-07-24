@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../services/product.service';
-import { Product } from '../models/product.model';
 import { isNull } from 'util';
-import { ImageService } from '../services/image.service';
+
+import { Product } from '../core/models/product.model';
+import { ImageService } from '../core/services/image.service';
+import { ProductService } from '../core/services/product.service';
 
 @Component({
   selector: 'app-home',

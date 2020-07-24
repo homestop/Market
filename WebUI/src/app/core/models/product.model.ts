@@ -6,6 +6,7 @@ export class Product {
   price: number;
   category: string;
   description: string;
+  // tslint:disable-next-line: variable-name
   in_stock: boolean;
   images: Image;
 }

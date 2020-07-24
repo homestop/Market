@@ -1,12 +1,11 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { Product } from '../models/product.model';
-import { CheckoutService } from '../services/checkout.service';
-import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
-import { OrderService } from '../services/order.service';
-import { Order } from '../models/order.model';
+import { Component, OnInit } from '@angular/core';
+
 import { SendHelper } from './ helpers';
-import { ProductService } from '../services/product.service';
+import { Order } from '../core/models/order.model';
+import { Product } from '../core/models/product.model';
+import { OrderService } from '../core/services/order.service';
+import { ProductService } from '../core/services/product.service';
+import { CheckoutService } from '../core/services/checkout.service';
 
 
 @Component({
