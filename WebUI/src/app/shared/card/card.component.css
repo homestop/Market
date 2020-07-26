@@ -1,0 +1,15 @@
+.card-body-style {
+    max-width: 190px;
+    max-height: 318px;
+    height: 318px;
+    width: 190px;
+    border-radius: 24px;
+}
+
+.card-button-style {
+    margin-left: 20px;
+}
+
+.card-content {
+    margin: 15px;
+}   

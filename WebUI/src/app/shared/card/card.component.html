@@ -1,0 +1,30 @@
+<mat-card class="card-body-style">
+    <mat-card-content>
+        <div *ngIf="imageIsNull(product.images.header); else notFound">
+            <ng-template #image>
+              <img width="168" height="128" 
+                [src]="product.images.header">
+            </ng-template>
+            <ng-container *ngTemplateOutlet="image"></ng-container>
+          </div>
+          <ng-template #notFound>
+              <img width="128", height="128"
+                src="../../../../../assets/not-found.png">
+          </ng-template>
+          <div class="card-content">
+              <h5>{{product.name}}</h5>
+              <h5>{{product.price}} $</h5>
+          </div>
+        </mat-card-content>
+        <mat-card-actions *ngIf="product.in_stock">
+            <button mat-flat-button color="primary" class="card-button-style" (click)="null"
+                [routerLink]="['/detail', product.id]">
+                Buy 
+            </button>
+        </mat-card-actions>
+        <mat-card-actions *ngIf="!product.in_stock">
+            <button mat-flat-button disabled class="card-button-style">
+                Sold 
+            </button>
+        </mat-card-actions>
+</mat-card>
