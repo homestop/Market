@@ -12,6 +12,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { DetailComponent } from './detail/detail.component';
 import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { CoreModule } from './core/core.module';
   ],
   imports: [
     CoreModule,
+    SharedModule,
 
     MatToolbarModule,
     MatInputModule,

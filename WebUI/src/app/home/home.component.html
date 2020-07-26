@@ -1,36 +1,7 @@
 <div class="container card-flex">
-    <div *ngFor="let product of products" 
+    <div *ngFor="let product of products"
         class="card-border" style="margin: 10px;">
-        <!-- TODO: Create card component -->
-        <mat-card class="card">
-            <mat-card-content>
-                <div>
-                    <div *ngIf="imageIsNull(product.images); else notFound">
-                        <ng-template #image>
-                            <img width="168" height="128" 
-                                [src]="product.images.header">     
-                        </ng-template>
-                        <ng-container *ngTemplateOutlet="image"></ng-container>
-                    </div>
-                    <ng-template #notFound>
-                        <img style="margin-left: 15px;" width="128" height="128" 
-                            src="../../assets/not-found.png">
-                    </ng-template>
-                    <div style="margin: 15px;">
-                        <h5>{{product.name}}</h5>
-                        <h5>{{product.price}} $</h5>
-                    </div>
-                </div>
-            </mat-card-content>
-            <mat-card-actions *ngIf="product.in_stock">
-                <button mat-button (click)="onBuyClick(product)"
-                        style="margin-left: 20px" [routerLink]="['/detail', product.id]">
-                  Buy
-                </button>
-            </mat-card-actions>
-            <mat-card-actions *ngIf="!product.in_stock">
-                <p style="color: red;">Sold out</p>
-            </mat-card-actions>
-        </mat-card>
+        
+        <app-card [product]="product"></app-card>
     </div>
 </div>
