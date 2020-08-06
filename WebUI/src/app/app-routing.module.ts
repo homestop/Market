@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { DetailComponent } from './detail/detail.component';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'checkout', component: CheckoutComponent },
-  { path: 'detail/:id', component: DetailComponent}
+  { path: '',
+    loadChildren: () => import('./content/content.module')
+      .then(m => m.ContentModule)
+  },
 ];
 
 @NgModule({

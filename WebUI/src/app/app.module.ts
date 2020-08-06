@@ -1,33 +1,24 @@
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { MatCardModule } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { DetailComponent } from './detail/detail.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { ContentModule } from './content/content.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    CheckoutComponent,
-    DetailComponent
   ],
   imports: [
     CoreModule,
     SharedModule,
+    ContentModule,
 
-    MatInputModule,
-    MatFormFieldModule,
-    MatCardModule,
-    MatExpansionModule,
+    BrowserModule,
+    AppRoutingModule,
   ],
 
   bootstrap: [AppComponent]

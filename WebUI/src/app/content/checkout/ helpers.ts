@@ -1,5 +1,5 @@
-import { Order } from '../core/models/order.model';
-import { Product } from '../core/models/product.model';
+import { Order } from '../../core/models/order.model';
+import { Product } from '../../core/models/product.model';
 
 
 export class SendHelper {

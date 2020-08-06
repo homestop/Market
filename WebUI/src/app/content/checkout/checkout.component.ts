@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SendHelper } from './ helpers';
-import { Order } from '../core/models/order.model';
-import { Product } from '../core/models/product.model';
-import { OrderService } from '../core/services/order.service';
-import { ProductService } from '../core/services/product.service';
-import { CheckoutService } from '../core/services/checkout.service';
+import { Order } from '../../core/models/order.model';
+import { Product } from '../../core/models/product.model';
+import { OrderService } from '../../core/services/order.service';
+import { ProductService } from '../../core/services/product.service';
+import { CheckoutService } from '../../core/services/checkout.service';
 
 
 @Component({

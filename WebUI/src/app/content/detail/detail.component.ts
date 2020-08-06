@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Product } from '../core/models/product.model';
-import { ImageService } from '../core/services/image.service';
-import { ProductService } from '../core/services/product.service';
-import { CheckoutService } from '../core/services/checkout.service';
+import { Product } from '../../core/models/product.model';
+import { ImageService } from '../../core/services/image.service';
+import { ProductService } from '../../core/services/product.service';
+import { CheckoutService } from '../../core/services/checkout.service';
 
 
 @Component({
