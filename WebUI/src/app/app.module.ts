@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -19,7 +17,6 @@ import { SharedModule } from './shared/shared.module';
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent,
     CheckoutComponent,
     DetailComponent
   ],
@@ -27,7 +24,6 @@ import { SharedModule } from './shared/shared.module';
     CoreModule,
     SharedModule,
 
-    MatToolbarModule,
     MatInputModule,
     MatFormFieldModule,
     MatCardModule,

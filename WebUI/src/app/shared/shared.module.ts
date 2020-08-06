@@ -4,11 +4,14 @@ import { CardComponent } from './card/card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @NgModule({
   declarations: [
-    CardComponent
+    CardComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
@@ -16,9 +19,11 @@ import { RouterModule } from '@angular/router';
 
     MatCardModule,
     MatButtonModule,
+    MatToolbarModule,
   ],
   exports: [
     CardComponent,
+    HeaderComponent
   ]
 })
 export class SharedModule { }
