@@ -3,7 +3,6 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { Image } from 'src/app/core/models/image.model';
 import { Product } from 'src/app/core/models/product.model';
-import { ImageService } from 'src/app/core/services/image.service';
 import { ProductService } from 'src/app/core/services/product.service';
 
 

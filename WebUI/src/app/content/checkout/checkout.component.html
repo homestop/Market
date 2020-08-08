@@ -1,76 +1,43 @@
 <div class="container checkout-flex">
   <div>
-    <form>
-      <mat-form-field>
-        <mat-label>First and last name</mat-label>
-        <input matInput id="firstLastNameId"/>
-        <mat-hint></mat-hint>
-      </mat-form-field>
-    </form>
-    <form class="email-form" (submit)="onSendClick()">
-      <mat-form-field>
-        <mat-label>Email</mat-label>
-        <input matInput id="emailInputId" 
-               errorStateMatcher="matcher" placeholder="example@example.com"/>
-      </mat-form-field>
-    </form>
-    <form>
-      <mat-form-field>
-        <mat-label>Phone</mat-label>
-        <input matInput id="phoneId"/>
-        <mat-hint></mat-hint>
-      </mat-form-field>
-    </form>
-    <form>
-      <mat-form-field>
-        <mat-label>Shipping address</mat-label>
-        <input matInput id="shippingAddressId"/>
-        <mat-hint></mat-hint>
-      </mat-form-field>
-    </form>
-    <button (click)="onSendClick()">Send</button>
-  </div>
-
-  <div class="checkout-card">
-    <mat-card class="checkout-card-style">
-      <mat-card-title
-        style="border-bottom: 1px solid  #c9c9c9;">
-        Test</mat-card-title>
+    <mat-card class="checkout-form">
+      <mat-card-title style="border-bottom: 1px solid #c9c9c9">Checkout</mat-card-title>
       <mat-card-content>
-        <div
-          *ngFor="let product of cartItems"
-          style="margin-top: 10px;"
-          class="expansion-panel">
-          <mat-expansion-panel class="expansion-panel">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                {{ product.name }}
-              </mat-panel-title>
-              <mat-panel-description style="align-items: flex-end;">
-                Price: {{ product.price }} $
-              </mat-panel-description>
-            </mat-expansion-panel-header>
-            <p>
-              Category: {{ product.category }}
-            </p>
-            <p>
-              Description: {{ product.description }}
-            </p>
-            <mat-action-row>
-              <button (click)="onRemoveByIndex(product)">Remove it</button>
-            </mat-action-row>
-          </mat-expansion-panel>
+        <div class="checkout-from-container">
+          <form class="checkout-form-content">
+            <mat-form-field>
+              <mat-label>First and last name</mat-label>
+              <input matInput id="firstLastNameId"/>
+              <mat-hint></mat-hint>
+            </mat-form-field>
+          </form>
+          <form class="email-form checkout-form-content" (submit)="onSendClick()">
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput id="emailInputId"
+                errorStateMatcher="matcher" placeholder="example@example.com"/>
+            </mat-form-field>
+          </form>
+          <form class="checkout-form-content">
+            <mat-form-field>
+              <mat-label>Phone</mat-label>
+              <input matInput id="phoneId"/>
+              <mat-hint></mat-hint>
+            </mat-form-field>
+          </form>
+          <form class="checkout-form-content">
+            <mat-form-field>
+              <mat-label>Shipping address</mat-label>
+              <input matInput id="shippingAddressId"/>
+              <mat-hint></mat-hint>
+            </mat-form-field>
+          </form>
+          <button class="checkout-form-send-button"(click)="onSendClick()">Send</button>
         </div>
       </mat-card-content>
-      <div style="display: flex; flex-direction: column;">
-        <div style="display: flex; flex-direction: row;">
-          <h4> Total price: </h4>
-          <h4 style="margin-left: 10px;"> 100 $ </h4>
-        </div>
-        <div style="display: flex; flex-direction: row; justify-content: right;">
-          <button (click)="onRemoveAllClick()">Remove all</button>
-        </div>
-      </div>
     </mat-card>
+  </div>
+  <div class="checkout-card">
+    <app-order-summary [productList]="cartItems"></app-order-summary>
   </div>
 </div>
