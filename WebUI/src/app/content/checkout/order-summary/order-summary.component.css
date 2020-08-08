@@ -1,0 +1,43 @@
+.order-summary-border-style {
+  flex: 1 1 auto;
+  height: 550px;
+  width: 550px;
+  border-radius: 24px;
+  border-width: 10px 10px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.order-summary-title {
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.order-summary-item {
+  margin-top: 10px;
+}
+
+.expansion-panel {
+  border-radius: 24px;
+  border-width: 10px 10px;
+  box-shadow: 0 4px 5 px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.expansion-panel-description {
+  align-items: flex-end;
+}
+
+.order-summary-total-price-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-summary-total-price-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.order-summary-remove-all {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}

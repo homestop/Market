@@ -1,0 +1,39 @@
+<mat-card class="order-summary-border-style">
+  <mat-card-title
+    class="order-summary-title">
+    Order Summary: </mat-card-title>
+  <mat-card-content>
+    <div
+      *ngFor="let product of productList"
+      class="order-summary-item expansion-panel">
+      <mat-expansion-panel class="expansion-panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ product.name }}
+          </mat-panel-title>
+          <mat-panel-description class="expansion-panel-description">
+            Price: {{ product.price }} $
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          Category: {{ product.category }}
+        </p>
+        <p>
+          Description: {{ product.description }}
+        </p>
+        <mat-action-row>
+          <button (click)="onRemoveByIndex(product)">Remove it</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </div>
+  </mat-card-content>
+  <div class="order-summary-total-price-column">
+    <div class="order-summary-total-price-row">
+      <h4> Total price: </h4>
+      <h4 style="margin-left: 10px;"> 100 $ </h4>
+    </div>
+    <div class="order-summary-remove-all">
+      <button (click)="onRemoveAllClick()">Remove all</button>
+    </div>
+  </div>
+</mat-card>
