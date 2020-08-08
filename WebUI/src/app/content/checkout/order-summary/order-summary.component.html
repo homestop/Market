@@ -22,7 +22,8 @@
           Description: {{ product.description }}
         </p>
         <mat-action-row>
-          <button (click)="onRemoveByIndex(product)">Remove it</button>
+          <button  mat-flat-button color="primary"
+            (click)="onRemoveByIndex(product)">Remove it</button>
         </mat-action-row>
       </mat-expansion-panel>
     </div>
@@ -30,10 +31,11 @@
   <div class="order-summary-total-price-column">
     <div class="order-summary-total-price-row">
       <h4> Total price: </h4>
-      <h4 style="margin-left: 10px;"> 100 $ </h4>
+      <h4 style="margin-left: 10px;"> </h4>
     </div>
     <div class="order-summary-remove-all">
-      <button (click)="onRemoveAllClick()">Remove all</button>
+      <button mat-flat-button color="primary"
+        (click)="onRemoveAllClick()">Remove all</button>
     </div>
   </div>
 </mat-card>

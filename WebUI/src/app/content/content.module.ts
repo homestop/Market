@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { DetailComponent } from './detail/detail.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderSummaryComponent } from './checkout/order-summary/order-summary.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { OrderSummaryComponent } from './checkout/order-summary/order-summary.co
 
     MatCardModule,
     MatInputModule,
+    MatButtonModule,
     MatExpansionModule,
     MatFormFieldModule,
   ]
